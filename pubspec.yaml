@@ -1,0 +1,26 @@
+name: isbue
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_screenutil: ^5.9.0
+  go_router: ^13.2.0
+
+dev_dependencies:
+  flutter_lints: ^3.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/isbue-icon.png
+    - assets/images/Isbue_Isotipo-V13.png
+    - assets/data/users.json
+    - assets/data/mfa.json
