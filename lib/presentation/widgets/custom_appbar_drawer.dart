@@ -34,60 +34,64 @@ class CustomAppbarDrawer extends StatelessWidget {
           ),
           const Divider(
             color: Colors.grey,
-            height: 1, // Color de la línea
+            height: 1, // Line color
           ),
           const ListViewOptions(
             label: 'Clientes',
             route: '/clientes',
+            menuIcon: Icons.supervisor_account_outlined,
           ),
           const ListViewOptions(
             label: 'Ruta',
             route: '/',
+            menuIcon: Icons.route_outlined,
           ),
           const ListViewOptions(
             label: 'Clientes cercanos',
-            route: '/',
+            route: '/singleclient',
+            menuIcon: Icons.supervised_user_circle_rounded,
           ),
           const ListViewOptions(
             label: 'Artículos',
             route: '/',
+            menuIcon: Icons.article_outlined,
           ),
           const ListViewOptions(
             label: 'Mis incidencias',
             route: '/',
+            menuIcon: Icons.event_outlined,
           ),
           const ListViewOptions(
             label: 'Incidencias sin agente',
             route: '/',
+            menuIcon: Icons.support_agent_outlined,
           ),
           const ListViewOptions(
             label: 'Tiendas virtuales',
             route: '/',
+            menuIcon: Icons.shop_2_outlined,
           ),
           const ListViewOptions(
             label: 'Resumen pedidos',
             route: '/',
+            menuIcon: Icons.shopping_cart_outlined,
           ),
           const ListViewOptions(
-            label: 'Resumen albaranes',
-            route: '/',
-          ),
+              label: 'Resumen albaranes',
+              route: '/',
+              menuIcon: Icons.receipt_long_rounded),
           const ListViewOptions(
-            label: 'Resumen cobros',
-            route: '/',
-          ),
+              label: 'Resumen cobros',
+              route: '/',
+              menuIcon: Icons.request_page_outlined),
           const ListViewOptions(
-            label: 'Resumen visitas',
-            route: '/',
-          ),
+              label: 'Resumen visitas',
+              route: '/',
+              menuIcon: Icons.preview_outlined),
           const ListViewOptions(
-            label: 'TPV',
-            route: '/',
-          ),
+              label: 'TPV', route: '/', menuIcon: Icons.tv_outlined),
           const ListViewOptions(
-            label: 'Notas',
-            route: '/',
-          ),
+              label: 'Notas', route: '/', menuIcon: Icons.event_note_outlined),
 
           // Agrega más elementos aquí
         ],
@@ -99,12 +103,11 @@ class CustomAppbarDrawer extends StatelessWidget {
 class ListViewOptions extends StatefulWidget {
   final String label;
   final String route;
+  final IconData menuIcon;
 
-  const ListViewOptions({
-    super.key,
-    required this.label,
-    required this.route,
-  });
+  const ListViewOptions(
+      {super.key, required this.label, required this.route, IconData? menuIcon})
+      : menuIcon = menuIcon ?? Icons.star;
 
   @override
   State<ListViewOptions> createState() => _ListViewOptionsState();
@@ -120,6 +123,7 @@ class _ListViewOptionsState extends State<ListViewOptions> {
       onExit: (_) => setState(() => _isHovered = false),
       child: Column(
         children: [
+          Divider(height: _isHovered ? 2 : 0, color: Colors.grey),
           Container(
             decoration: BoxDecoration(
               color: _isHovered
@@ -127,7 +131,7 @@ class _ListViewOptionsState extends State<ListViewOptions> {
                   : Colors.white, // Cambia el color de fondo
             ),
             child: ListTile(
-              leading: Icon(Icons.star,
+              leading: Icon(widget.menuIcon,
                   color: _isHovered
                       ? Colors.white
                       : const Color.fromRGBO(73, 37, 185, 1)),
@@ -142,7 +146,7 @@ class _ListViewOptionsState extends State<ListViewOptions> {
             ),
           ),
           Divider(
-              height: _isHovered ? 2 : 0, color: Colors.grey), // Línea inferior
+              height: _isHovered ? 2 : 0, color: Colors.grey), // Bottom Line
         ],
       ),
     );

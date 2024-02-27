@@ -1,4 +1,5 @@
 import 'package:go_router/go_router.dart';
+import 'package:isbue/presentation/clients/screen/single_client_screen.dart';
 import 'package:isbue/presentation/login/screen/login_screen.dart';
 import 'package:isbue/presentation/home/screen/home_screen.dart';
 import 'package:isbue/presentation/mfa/screen/mfa_screen.dart';
@@ -26,5 +27,9 @@ final appRouter = GoRouter(routes: [
   GoRoute(
     path: '/clientes',
     builder: (context, state) => const ClientsScreen(),
+  ),
+  GoRoute(
+    path: '/singleclient',
+    builder: (context, state) => const SingleClientScreen(),
   )
 ]);

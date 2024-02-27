@@ -47,6 +47,8 @@ class MyCustomTable extends StatelessWidget {
     (row) => List.generate(4, (col) => 'Celda $row, $col'),
   );
 
+  MyCustomTable({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -80,11 +82,11 @@ class MyCustomTable extends StatelessWidget {
                     .map((cell) => Container(
                           alignment: Alignment.center,
                           padding: const EdgeInsets.all(8.0),
-                          child: Text(cell,
-                              style: const TextStyle(color: Colors.black)),
                           decoration: const BoxDecoration(
                             color: Colors.white,
                           ),
+                          child: Text(cell,
+                              style: const TextStyle(color: Colors.black)),
                         ))
                     .toList(),
               )),

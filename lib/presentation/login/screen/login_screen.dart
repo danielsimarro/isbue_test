@@ -12,14 +12,13 @@ class LoginScreen extends StatelessWidget {
     isDevice isdevice = isDevice();
     String urlIsbueIcon = 'assets/images/isbue-icon.png';
 
-    // Controladores para los campos de texto
     final emailController = TextEditingController();
     final passwordController = TextEditingController();
 
     return Scaffold(
       body: Center(
         child: SizedBox(
-          // Controlamos el dispositivo que es para ajustar el tamaño
+          // Control the width to adapt the content
           width: isdevice.isTablet() ? 600.0 : double.infinity,
           child: Padding(
             padding: const EdgeInsets.only(left: 40, right: 40, bottom: 120),
@@ -88,7 +87,7 @@ class InputLogin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
-      controller: controller, // Y finalmente esto
+      controller: controller,
       obscureText: labelText == "Contraseña",
       decoration: InputDecoration(
           border: const OutlineInputBorder(

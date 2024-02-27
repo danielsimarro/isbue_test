@@ -6,4 +6,8 @@ class isDevice {
     var widthScreen = 1.sw; // sw es el ancho de la pantalla actual
     return widthScreen > 600; // Considera >600 como una tablet
   }
+
+  double deviceWidth() {
+    return 1.sw;
+  }
 }
