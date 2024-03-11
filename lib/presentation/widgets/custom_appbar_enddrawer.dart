@@ -35,7 +35,7 @@ class CustomAppbarEndDrawer extends StatelessWidget {
           ),
           const ListViewOptions(
             label: 'Accion 1',
-            route: '/clientes',
+            route: '/actionOneSingleClientScreen',
             menuIcon: Icons.supervisor_account_outlined,
           ),
           const ListViewOptions(
