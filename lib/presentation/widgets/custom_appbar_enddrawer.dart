@@ -3,8 +3,8 @@ import 'package:go_router/go_router.dart';
 
 import '../../config/helpers/is_device.dart';
 
-class CustomAppbarDrawer extends StatelessWidget {
-  const CustomAppbarDrawer({super.key});
+class CustomAppbarEndDrawer extends StatelessWidget {
+  const CustomAppbarEndDrawer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,11 +24,8 @@ class CustomAppbarDrawer extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Instalación 1',
+                Text('Acciones',
                     style: Theme.of(context).textTheme.headlineSmall),
-                const Text(
-                  'Manolito Agenda',
-                ),
               ],
             ),
           ),
@@ -37,63 +34,25 @@ class CustomAppbarDrawer extends StatelessWidget {
             height: 1, // Line color
           ),
           const ListViewOptions(
-            label: 'Clientes',
+            label: 'Accion 1',
             route: '/clientes',
             menuIcon: Icons.supervisor_account_outlined,
           ),
           const ListViewOptions(
-            label: 'Ruta',
+            label: 'Accion 2',
             route: '/',
             menuIcon: Icons.route_outlined,
           ),
           const ListViewOptions(
-            label: 'Clientes cercanos',
+            label: 'Accion 3',
             route: '/singleclient',
             menuIcon: Icons.supervised_user_circle_rounded,
           ),
           const ListViewOptions(
-            label: 'Artículos',
+            label: 'Accion 4',
             route: '/articulos',
             menuIcon: Icons.article_outlined,
-          ),
-          const ListViewOptions(
-            label: 'Mis incidencias',
-            route: '/',
-            menuIcon: Icons.event_outlined,
-          ),
-          const ListViewOptions(
-            label: 'Incidencias sin agente',
-            route: '/',
-            menuIcon: Icons.support_agent_outlined,
-          ),
-          const ListViewOptions(
-            label: 'Tiendas virtuales',
-            route: '/',
-            menuIcon: Icons.shop_2_outlined,
-          ),
-          const ListViewOptions(
-            label: 'Resumen pedidos',
-            route: '/',
-            menuIcon: Icons.shopping_cart_outlined,
-          ),
-          const ListViewOptions(
-              label: 'Resumen albaranes',
-              route: '/',
-              menuIcon: Icons.receipt_long_rounded),
-          const ListViewOptions(
-              label: 'Resumen cobros',
-              route: '/',
-              menuIcon: Icons.request_page_outlined),
-          const ListViewOptions(
-              label: 'Resumen visitas',
-              route: '/',
-              menuIcon: Icons.preview_outlined),
-          const ListViewOptions(
-              label: 'TPV', route: '/', menuIcon: Icons.tv_outlined),
-          const ListViewOptions(
-              label: 'Notas', route: '/', menuIcon: Icons.event_note_outlined),
-
-          // Agrega más elementos aquí
+          )
         ],
       ),
     );

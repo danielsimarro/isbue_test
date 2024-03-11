@@ -31,5 +31,5 @@ final appRouter = GoRouter(routes: [
   GoRoute(
     path: '/singleclient',
     builder: (context, state) => const SingleClientScreen(),
-  )
+  ),
 ]);

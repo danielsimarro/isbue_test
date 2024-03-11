@@ -3,6 +3,7 @@ import 'package:isbue/config/helpers/is_device.dart';
 import 'package:isbue/presentation/clients/screen/detail_screen.dart';
 import 'package:isbue/presentation/widgets/custom_drawer_icon.dart';
 import '../../widgets/custom_appbar_drawer.dart';
+import '../../widgets/custom_appbar_enddrawer.dart';
 import 'information_screen.dart';
 
 class SingleClientScreen extends StatelessWidget {
@@ -29,6 +30,11 @@ class SingleClientScreen extends StatelessWidget {
           ),
           actions: <Widget>[
             IconButton(
+              icon: const Icon(Icons.more_vert),
+              onPressed: () =>
+                  scaffoldKey.currentState?.openEndDrawer(), // Abre el drawer
+            ),
+            IconButton(
               icon: SizedBox(
                 height: 60,
                 child: Image.asset('assets/images/Isbue_Isotipo-V13.png',
@@ -41,6 +47,7 @@ class SingleClientScreen extends StatelessWidget {
           ],
         ),
         drawer: const CustomAppbarDrawer(),
+        endDrawer: const CustomAppbarEndDrawer(),
         body: const MiPantallaConPestanas());
   }
 }
